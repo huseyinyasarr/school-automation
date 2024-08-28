@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox_Student_Login = new System.Windows.Forms.GroupBox();
-            this.button_Student_Login = new System.Windows.Forms.Button();
-            this.label_Student_ID = new System.Windows.Forms.Label();
-            this.textBox_Student_ID = new System.Windows.Forms.TextBox();
-            this.textBox_Student_Password = new System.Windows.Forms.TextBox();
             this.label_Student_Password = new System.Windows.Forms.Label();
+            this.textBox_Student_Password = new System.Windows.Forms.TextBox();
+            this.textBox_Student_ID = new System.Windows.Forms.TextBox();
+            this.label_Student_ID = new System.Windows.Forms.Label();
+            this.button_Student_Login = new System.Windows.Forms.Button();
             this.groupBox_Teacher_Login = new System.Windows.Forms.GroupBox();
             this.label_Teacher_Password = new System.Windows.Forms.Label();
             this.textBox_Teacher_Password = new System.Windows.Forms.TextBox();
@@ -60,16 +60,30 @@
             this.groupBox_Student_Login.TabStop = false;
             this.groupBox_Student_Login.Text = "Öğrenci Giriş";
             // 
-            // button_Student_Login
+            // label_Student_Password
             // 
-            this.button_Student_Login.Location = new System.Drawing.Point(75, 188);
-            this.button_Student_Login.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_Student_Login.Name = "button_Student_Login";
-            this.button_Student_Login.Size = new System.Drawing.Size(81, 28);
-            this.button_Student_Login.TabIndex = 0;
-            this.button_Student_Login.Text = "Giriş";
-            this.button_Student_Login.UseVisualStyleBackColor = true;
-            this.button_Student_Login.Click += new System.EventHandler(this.button_Student_Login_Click);
+            this.label_Student_Password.AutoSize = true;
+            this.label_Student_Password.Location = new System.Drawing.Point(101, 122);
+            this.label_Student_Password.Name = "label_Student_Password";
+            this.label_Student_Password.Size = new System.Drawing.Size(35, 16);
+            this.label_Student_Password.TabIndex = 4;
+            this.label_Student_Password.Text = "Şifre";
+            // 
+            // textBox_Student_Password
+            // 
+            this.textBox_Student_Password.Location = new System.Drawing.Point(34, 145);
+            this.textBox_Student_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_Student_Password.Name = "textBox_Student_Password";
+            this.textBox_Student_Password.Size = new System.Drawing.Size(163, 24);
+            this.textBox_Student_Password.TabIndex = 3;
+            // 
+            // textBox_Student_ID
+            // 
+            this.textBox_Student_ID.Location = new System.Drawing.Point(34, 66);
+            this.textBox_Student_ID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_Student_ID.Name = "textBox_Student_ID";
+            this.textBox_Student_ID.Size = new System.Drawing.Size(163, 24);
+            this.textBox_Student_ID.TabIndex = 2;
             // 
             // label_Student_ID
             // 
@@ -80,30 +94,16 @@
             this.label_Student_ID.TabIndex = 1;
             this.label_Student_ID.Text = "Kimlik Numarası";
             // 
-            // textBox_Student_ID
+            // button_Student_Login
             // 
-            this.textBox_Student_ID.Location = new System.Drawing.Point(34, 66);
-            this.textBox_Student_ID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox_Student_ID.Name = "textBox_Student_ID";
-            this.textBox_Student_ID.Size = new System.Drawing.Size(163, 24);
-            this.textBox_Student_ID.TabIndex = 2;
-            // 
-            // textBox_Student_Password
-            // 
-            this.textBox_Student_Password.Location = new System.Drawing.Point(34, 145);
-            this.textBox_Student_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox_Student_Password.Name = "textBox_Student_Password";
-            this.textBox_Student_Password.Size = new System.Drawing.Size(163, 24);
-            this.textBox_Student_Password.TabIndex = 3;
-            // 
-            // label_Student_Password
-            // 
-            this.label_Student_Password.AutoSize = true;
-            this.label_Student_Password.Location = new System.Drawing.Point(101, 122);
-            this.label_Student_Password.Name = "label_Student_Password";
-            this.label_Student_Password.Size = new System.Drawing.Size(35, 16);
-            this.label_Student_Password.TabIndex = 4;
-            this.label_Student_Password.Text = "Şifre";
+            this.button_Student_Login.Location = new System.Drawing.Point(69, 188);
+            this.button_Student_Login.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button_Student_Login.Name = "button_Student_Login";
+            this.button_Student_Login.Size = new System.Drawing.Size(98, 28);
+            this.button_Student_Login.TabIndex = 0;
+            this.button_Student_Login.Text = "Giriş";
+            this.button_Student_Login.UseVisualStyleBackColor = true;
+            this.button_Student_Login.Click += new System.EventHandler(this.button_Student_Login_Click);
             // 
             // groupBox_Teacher_Login
             // 
@@ -120,6 +120,7 @@
             this.groupBox_Teacher_Login.TabIndex = 5;
             this.groupBox_Teacher_Login.TabStop = false;
             this.groupBox_Teacher_Login.Text = "Öğretmen Giriş";
+            this.groupBox_Teacher_Login.Enter += new System.EventHandler(this.groupBox_Teacher_Login_Enter);
             // 
             // label_Teacher_Password
             // 
@@ -157,10 +158,10 @@
             // 
             // button_Teacher_Login
             // 
-            this.button_Teacher_Login.Location = new System.Drawing.Point(75, 188);
+            this.button_Teacher_Login.Location = new System.Drawing.Point(69, 188);
             this.button_Teacher_Login.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_Teacher_Login.Name = "button_Teacher_Login";
-            this.button_Teacher_Login.Size = new System.Drawing.Size(81, 28);
+            this.button_Teacher_Login.Size = new System.Drawing.Size(98, 28);
             this.button_Teacher_Login.TabIndex = 0;
             this.button_Teacher_Login.Text = "Giriş";
             this.button_Teacher_Login.UseVisualStyleBackColor = true;

@@ -36,5 +36,10 @@ namespace SchoolAutomation
             new AdminScreen().ShowDialog();
 
         }
+
+        private void groupBox_Teacher_Login_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
