@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SchoolAutomation
 {
-    public partial class Form1 : Form
+    public partial class StudentScreen : Form
     {
-        public Form1()
+        public StudentScreen()
         {
             InitializeComponent();
         }
