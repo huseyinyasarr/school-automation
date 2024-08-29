@@ -1,23 +1,24 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SchoolAutomation
 {
-    public partial class AdminScreen : Form
+    public partial class AdminEditScreen : Form
     {
-        public AdminScreen()
+        public AdminEditScreen()
         {
             InitializeComponent();
+            Clear();
             List();
         }
 
-        SqlConnection connectionString = new SqlConnection("Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;");
+        AdminScreen adminScreen = new AdminScreen();
 
         public void List()
         {
+
+
             connectionString.Open();
             SqlCommand cmd = new SqlCommand("select *from student", connectionString);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -42,34 +43,6 @@ namespace SchoolAutomation
 
             }
             connectionString.Close();
-
-        }
-
-       
-
-        private void AdminScreen_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-
-
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new NewRegistration().ShowDialog();
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         public void Clear()
@@ -77,15 +50,17 @@ namespace SchoolAutomation
             listView1.Items.Clear();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        SqlConnection connectionString = new SqlConnection("Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;");
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_List_Edit_Click(object sender, EventArgs e)
         {
             Clear();
             List();
-        }
-
-        private void button_edit_Click(object sender, EventArgs e)
-        {
-            new AdminEditScreen().ShowDialog();
         }
     }
 }

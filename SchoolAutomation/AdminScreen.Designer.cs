@@ -31,11 +31,12 @@
             this.button_New_Registration = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button_Update = new System.Windows.Forms.Button();
+            this.button_List = new System.Windows.Forms.Button();
+            this.button_edit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_New_Registration
@@ -72,17 +73,17 @@
             this.columnHeader1.Text = "Kimlik Numarası";
             this.columnHeader1.Width = 110;
             // 
-            // columnHeader2
-            // 
-            this.columnHeader2.DisplayIndex = 1;
-            this.columnHeader2.Text = "Adı";
-            this.columnHeader2.Width = 100;
-            // 
             // columnHeader3
             // 
             this.columnHeader3.DisplayIndex = 2;
             this.columnHeader3.Text = "Soyadı";
             this.columnHeader3.Width = 110;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.DisplayIndex = 1;
+            this.columnHeader2.Text = "Adı";
+            this.columnHeader2.Width = 100;
             // 
             // columnHeader4
             // 
@@ -94,22 +95,33 @@
             this.columnHeader5.Text = "Adres";
             this.columnHeader5.Width = 259;
             // 
-            // button_Update
+            // button_List
             // 
-            this.button_Update.Location = new System.Drawing.Point(567, 257);
-            this.button_Update.Name = "button_Update";
-            this.button_Update.Size = new System.Drawing.Size(98, 28);
-            this.button_Update.TabIndex = 3;
-            this.button_Update.Text = "Güncelle";
-            this.button_Update.UseVisualStyleBackColor = true;
-            this.button_Update.Click += new System.EventHandler(this.button1_Click_1);
+            this.button_List.Location = new System.Drawing.Point(573, 257);
+            this.button_List.Name = "button_List";
+            this.button_List.Size = new System.Drawing.Size(98, 28);
+            this.button_List.TabIndex = 3;
+            this.button_List.Text = "Listele";
+            this.button_List.UseVisualStyleBackColor = true;
+            this.button_List.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button_edit
+            // 
+            this.button_edit.Location = new System.Drawing.Point(12, 257);
+            this.button_edit.Name = "button_edit";
+            this.button_edit.Size = new System.Drawing.Size(98, 28);
+            this.button_edit.TabIndex = 4;
+            this.button_edit.Text = "Düzenle";
+            this.button_edit.UseVisualStyleBackColor = true;
+            this.button_edit.Click += new System.EventHandler(this.button_edit_Click);
             // 
             // AdminScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 300);
-            this.Controls.Add(this.button_Update);
+            this.Controls.Add(this.button_edit);
+            this.Controls.Add(this.button_List);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button_New_Registration);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -127,7 +139,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button button_Update;
+        private System.Windows.Forms.Button button_List;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button button_edit;
     }
 }
