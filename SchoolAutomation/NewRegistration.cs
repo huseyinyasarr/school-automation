@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SchoolAutomation
 {
@@ -18,18 +10,12 @@ namespace SchoolAutomation
             InitializeComponent();
         }
 
-        student save = new student();
-        SchoolDbEntities db = new SchoolDbEntities();
+
+        
+
         public void Save()
         {
-            save.IdentificationNumber = textBox_ID.Text;
-            save.Class = Convert.ToInt32(textBox_Class.Text);
-            save.FirstName = textBox_FirstName.Text;
-            save.LastName = textBox_LastName.Text;
-            save.Address = textBox_Address.Text;
-
-            db.student.Add(save);
-            db.SaveChanges();
+            
 
             MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
