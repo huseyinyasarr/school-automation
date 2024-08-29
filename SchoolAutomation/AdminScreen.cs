@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SchoolAutomation
 {
@@ -72,9 +73,7 @@ namespace SchoolAutomation
 
         public void Clear()
         {
-            ListViewItem item = new ListViewItem();
-
-            
+            listView1.Items.Clear();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
