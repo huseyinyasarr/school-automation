@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace SchoolAutomation
@@ -10,12 +11,17 @@ namespace SchoolAutomation
             InitializeComponent();
         }
 
+        SqlConnection connectionString = new SqlConnection("Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;");
 
-        
 
         public void Save()
         {
-            
+            connectionString.Open();
+
+            SqlCommand write = new SqlCommand("insert into student values ('"+textBox_ID.Text.ToString()+"', '"+ Convert.ToInt32(textBox_Class.Text)+"' , '"+textBox_FirstName.Text.ToString()+"', '"+textBox_LastName.Text.ToString()+"', '"+textBox_Address.Text.ToString()+"')", connectionString);
+
+            write.ExecuteNonQuery();
+
 
             MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
