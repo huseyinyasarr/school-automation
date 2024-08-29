@@ -36,5 +36,10 @@ namespace SchoolAutomation
         {
 
         }
+
+        private void groupBox_Student_Login_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

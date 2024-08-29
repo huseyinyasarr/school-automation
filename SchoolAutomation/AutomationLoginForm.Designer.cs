@@ -59,6 +59,7 @@
             this.groupBox_Student_Login.TabIndex = 0;
             this.groupBox_Student_Login.TabStop = false;
             this.groupBox_Student_Login.Text = "Öğrenci Giriş";
+            this.groupBox_Student_Login.Enter += new System.EventHandler(this.groupBox_Student_Login_Enter);
             // 
             // label_Student_Password
             // 

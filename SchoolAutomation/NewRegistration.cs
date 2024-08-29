@@ -13,6 +13,7 @@ namespace SchoolAutomation
 
         SqlConnection connectionString = new SqlConnection("Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;");
 
+        AdminScreen adminScreen = new AdminScreen();
 
         public void Save()
         {
@@ -85,6 +86,7 @@ namespace SchoolAutomation
         private void button_Cancel_Click(object sender, EventArgs e)
         {
             Clear();
+            this.Close();
         }
 
         private void button_Apply_Click(object sender, EventArgs e)
@@ -98,7 +100,9 @@ namespace SchoolAutomation
             else
             {
                 Save();
+                adminScreen.List();
                 Clear();
+                
             }
 
         }

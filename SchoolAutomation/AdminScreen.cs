@@ -11,11 +11,12 @@ namespace SchoolAutomation
         public AdminScreen()
         {
             InitializeComponent();
+            List();
         }
 
         SqlConnection connectionString = new SqlConnection("Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;");
 
-        private void List()
+        public void List()
         {
             connectionString.Open();
             SqlCommand cmd = new SqlCommand("select *from student", connectionString);

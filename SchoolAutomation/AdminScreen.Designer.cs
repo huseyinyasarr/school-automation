@@ -35,7 +35,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_Update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_New_Registration
@@ -52,15 +52,17 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2,
             this.columnHeader3,
+            this.columnHeader2,
             this.columnHeader4,
             this.columnHeader5});
             this.listView1.HideSelection = false;
+            this.listView1.LabelEdit = true;
             this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(776, 230);
             this.listView1.TabIndex = 2;
+            this.listView1.TileSize = new System.Drawing.Size(270, 36);
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -68,41 +70,49 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Kimlik Numarası";
+            this.columnHeader1.Width = 110;
             // 
             // columnHeader2
             // 
+            this.columnHeader2.DisplayIndex = 1;
             this.columnHeader2.Text = "Adı";
+            this.columnHeader2.Width = 100;
             // 
             // columnHeader3
             // 
+            this.columnHeader3.DisplayIndex = 2;
             this.columnHeader3.Text = "Soyadı";
+            this.columnHeader3.Width = 110;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Sınıfı";
+            this.columnHeader4.Width = 61;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Adres";
+            this.columnHeader5.Width = 259;
             // 
-            // button1
+            // button_Update
             // 
-            this.button1.Location = new System.Drawing.Point(567, 257);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button_Update.Location = new System.Drawing.Point(567, 257);
+            this.button_Update.Name = "button_Update";
+            this.button_Update.Size = new System.Drawing.Size(98, 28);
+            this.button_Update.TabIndex = 3;
+            this.button_Update.Text = "Güncelle";
+            this.button_Update.UseVisualStyleBackColor = true;
+            this.button_Update.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // AdminScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 300);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_Update);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button_New_Registration);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AdminScreen";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.AdminScreen_Load);
@@ -113,11 +123,11 @@
         #endregion
         private System.Windows.Forms.Button button_New_Registration;
         private System.Windows.Forms.ListView listView1;
-        internal System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Update;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
