@@ -27,6 +27,7 @@ namespace SchoolAutomation
 
                 connectionString.Close();
 
+                Clear();
                 List();
 
 
@@ -34,7 +35,7 @@ namespace SchoolAutomation
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Silme işlemi başarısız. Mesaj : "+ex.Message, "Silme İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Silme işlemi başarısız. Mesaj : " + ex.Message, "Silme İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -82,7 +83,7 @@ namespace SchoolAutomation
             textBox_IdentificationNumber_Edit.Text = "";
         }
 
-        
+
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -103,27 +104,17 @@ namespace SchoolAutomation
         private void button1_Click_1(object sender, EventArgs e)
         {
             Clear_TextBox();
-            connectionString.Open();
-            SqlCommand cmd = new SqlCommand("select *from student", connectionString);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ListViewItem item = new ListViewItem();
+            
 
 
-                textBox_IdentificationNumber_Edit.Text = reader.GetString(0);
-                textBox_FirstName_Edit.Text = reader.GetString(2);
-                textBox_LastName_Edit.Text = reader.GetString(3);
-                textBox_Class_Edit.Text = reader[1].ToString(); 
-                textBox_Address_Edit.Text = reader.GetString(4);
+            textBox_IdentificationNumber_Edit.Text = listView1.SelectedItems[0].SubItems[0].Text;
+            textBox_FirstName_Edit.Text = listView1.SelectedItems[0].SubItems[1].Text;
+            textBox_LastName_Edit.Text = listView1.SelectedItems[0].SubItems[2].Text;
+            textBox_Class_Edit.Text = listView1.SelectedItems[0].SubItems[3].Text;
+            textBox_Address_Edit.Text = listView1.SelectedItems[0].SubItems[4].Text;
 
 
 
-               
-
-            }
-            connectionString.Close();
         }
     }
 }
