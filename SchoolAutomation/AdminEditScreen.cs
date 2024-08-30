@@ -7,6 +7,8 @@ namespace SchoolAutomation
 {
     public partial class AdminEditScreen : Form
     {
+
+
         public AdminEditScreen()
         {
             InitializeComponent();
@@ -15,6 +17,22 @@ namespace SchoolAutomation
         }
 
         SqlConnection connectionString = new SqlConnection("Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;");
+
+        public int YesOrNo()
+        {
+            if (textBox_IdentificationNumber_Edit.Text == "" || textBox_FirstName_Edit.Text == "" || textBox_LastName_Edit.Text == "" || Convert.ToInt32(textBox_Class_Edit.Text) < 0 || Convert.ToInt32(textBox_Class_Edit.Text) > 4 || textBox_Address_Edit.Text == "")
+            {
+                MessageBox.Show("Tüm bilgileri doğru girdiğinizden emin olunuz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 0;
+            }
+
+            else
+            {
+                return 1;
+            }
+
+
+        }
 
         public void Delete()
         {
@@ -122,7 +140,7 @@ namespace SchoolAutomation
             catch (Exception)
             {
 
-                MessageBox.Show("Herhangi bir öğrenci seçilmedi.", "Uyarı!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("Herhangi bir öğrenci seçilmedi.", "Uyarı!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 
@@ -132,28 +150,29 @@ namespace SchoolAutomation
         {
             try
             {
-                connectionString.Open();
 
-                SqlCommand write = new SqlCommand("UPDATE student SET Class=@Class, FirstName=@FirstName, LastName=@LastName, Address=@Address WHERE IdentificationNumber=@IdentificationNumber", connectionString);
+                if (YesOrNo() == 1)
+                {
+                    connectionString.Open();
 
-                write.Parameters.AddWithValue("@IdentificationNumber", textBox_IdentificationNumber_Edit.Text);
-                write.Parameters.AddWithValue("@FirstName", textBox_FirstName_Edit.Text);
-                write.Parameters.AddWithValue("@LastName", textBox_LastName_Edit.Text);
-                write.Parameters.AddWithValue("@Class", Convert.ToInt32(textBox_Class_Edit.Text));
-                write.Parameters.AddWithValue("@Address", textBox_Address_Edit.Text);
+                    SqlCommand write = new SqlCommand("UPDATE student SET Class=@Class, FirstName=@FirstName, LastName=@LastName, Address=@Address WHERE IdentificationNumber=@IdentificationNumber", connectionString);
+
+                    write.Parameters.AddWithValue("@IdentificationNumber", textBox_IdentificationNumber_Edit.Text);
+                    write.Parameters.AddWithValue("@FirstName", textBox_FirstName_Edit.Text);
+                    write.Parameters.AddWithValue("@LastName", textBox_LastName_Edit.Text);
+                    write.Parameters.AddWithValue("@Class", Convert.ToInt32(textBox_Class_Edit.Text));
+                    write.Parameters.AddWithValue("@Address", textBox_Address_Edit.Text);
+
+                    write.ExecuteNonQuery();
+                    connectionString.Close();
 
 
+                    MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-                write.ExecuteNonQuery();
-                connectionString.Close();
-
-
-                MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                Clear_TextBox();
-                Clear();
-                List();
+                    Clear_TextBox();
+                    Clear();
+                    List(); 
+                }
             }
             catch (Exception)
             {
