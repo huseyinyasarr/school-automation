@@ -206,7 +206,7 @@
             // 
             // button_List_Edit
             // 
-            this.button_List_Edit.Location = new System.Drawing.Point(23, 323);
+            this.button_List_Edit.Location = new System.Drawing.Point(28, 315);
             this.button_List_Edit.Name = "button_List_Edit";
             this.button_List_Edit.Size = new System.Drawing.Size(98, 28);
             this.button_List_Edit.TabIndex = 2;
@@ -216,7 +216,7 @@
             // 
             // button_Delete_Edit
             // 
-            this.button_Delete_Edit.Location = new System.Drawing.Point(130, 323);
+            this.button_Delete_Edit.Location = new System.Drawing.Point(135, 315);
             this.button_Delete_Edit.Name = "button_Delete_Edit";
             this.button_Delete_Edit.Size = new System.Drawing.Size(98, 28);
             this.button_Delete_Edit.TabIndex = 3;
@@ -226,7 +226,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(236, 323);
+            this.button1.Location = new System.Drawing.Point(241, 315);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 28);
             this.button1.TabIndex = 4;
