@@ -122,6 +122,7 @@
             this.button_Save_Edit.TabIndex = 10;
             this.button_Save_Edit.Text = "Kaydet";
             this.button_Save_Edit.UseVisualStyleBackColor = true;
+            this.button_Save_Edit.Click += new System.EventHandler(this.button_Save_Edit_Click);
             // 
             // textBox_Address_Edit
             // 

@@ -99,6 +99,7 @@ namespace SchoolAutomation
         private void button1_Click(object sender, EventArgs e)
         {
             Delete();
+            List();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -115,6 +116,32 @@ namespace SchoolAutomation
 
 
 
+        }
+
+        private void button_Save_Edit_Click(object sender, EventArgs e)
+        {
+            connectionString.Open();
+
+            SqlCommand write = new SqlCommand("UPDATE student SET Class=@Class, FirstName=@FirstName, LastName=@LastName, Address=@Address WHERE IdentificationNumber=@IdentificationNumber", connectionString);
+
+            write.Parameters.AddWithValue("@IdentificationNumber", textBox_IdentificationNumber_Edit.Text);
+            write.Parameters.AddWithValue("@FirstName", textBox_FirstName_Edit.Text);
+            write.Parameters.AddWithValue("@LastName", textBox_LastName_Edit.Text);
+            write.Parameters.AddWithValue("@Class", Convert.ToInt32(textBox_Class_Edit.Text));
+            write.Parameters.AddWithValue("@Address", textBox_Address_Edit.Text);
+
+
+            
+
+            write.ExecuteNonQuery();
+            connectionString.Close();
+
+
+            MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Clear_TextBox();
+            Clear();
+            List();
         }
     }
 }
