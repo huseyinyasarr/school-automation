@@ -13,7 +13,7 @@ namespace SchoolAutomation
 
         SqlConnection connectionString = new SqlConnection("Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;");
 
-        AdminScreen adminScreen = new AdminScreen();
+        
 
         public void Save()
         {
@@ -27,6 +27,7 @@ namespace SchoolAutomation
             MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             Clear();
+            connectionString.Close();
 
         }
 
@@ -100,10 +101,15 @@ namespace SchoolAutomation
             else
             {
                 Save();
-                adminScreen.List();
+                
                 Clear();
                 
             }
+
+        }
+
+        private void textBox_Class_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
