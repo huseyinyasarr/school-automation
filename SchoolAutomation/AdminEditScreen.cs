@@ -100,23 +100,30 @@ namespace SchoolAutomation
         private void button1_Click(object sender, EventArgs e)
         {
             Delete();
+            Clear();
             List();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Clear_TextBox();
-            
+            try
+            {
+                Clear_TextBox();
 
+                textBox_IdentificationNumber_Edit.Text = listView1.SelectedItems[0].SubItems[0].Text;
+                textBox_FirstName_Edit.Text = listView1.SelectedItems[0].SubItems[1].Text;
+                textBox_LastName_Edit.Text = listView1.SelectedItems[0].SubItems[2].Text;
+                textBox_Class_Edit.Text = listView1.SelectedItems[0].SubItems[3].Text;
+                textBox_Address_Edit.Text = listView1.SelectedItems[0].SubItems[4].Text;
 
-            textBox_IdentificationNumber_Edit.Text = listView1.SelectedItems[0].SubItems[0].Text;
-            textBox_FirstName_Edit.Text = listView1.SelectedItems[0].SubItems[1].Text;
-            textBox_LastName_Edit.Text = listView1.SelectedItems[0].SubItems[2].Text;
-            textBox_Class_Edit.Text = listView1.SelectedItems[0].SubItems[3].Text;
-            textBox_Address_Edit.Text = listView1.SelectedItems[0].SubItems[4].Text;
+                Clear();
+                List();
+            }
+            catch (Exception)
+            {
 
-            Clear();
-            List();
+                MessageBox.Show("Herhangi bir öğrenci seçilmedi.", "Uyarı!", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
 
 
         }
