@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -114,34 +115,45 @@ namespace SchoolAutomation
             textBox_Class_Edit.Text = listView1.SelectedItems[0].SubItems[3].Text;
             textBox_Address_Edit.Text = listView1.SelectedItems[0].SubItems[4].Text;
 
+            Clear();
+            List();
 
 
         }
 
         private void button_Save_Edit_Click(object sender, EventArgs e)
         {
-            connectionString.Open();
+            try
+            {
+                connectionString.Open();
 
-            SqlCommand write = new SqlCommand("UPDATE student SET Class=@Class, FirstName=@FirstName, LastName=@LastName, Address=@Address WHERE IdentificationNumber=@IdentificationNumber", connectionString);
+                SqlCommand write = new SqlCommand("UPDATE student SET Class=@Class, FirstName=@FirstName, LastName=@LastName, Address=@Address WHERE IdentificationNumber=@IdentificationNumber", connectionString);
 
-            write.Parameters.AddWithValue("@IdentificationNumber", textBox_IdentificationNumber_Edit.Text);
-            write.Parameters.AddWithValue("@FirstName", textBox_FirstName_Edit.Text);
-            write.Parameters.AddWithValue("@LastName", textBox_LastName_Edit.Text);
-            write.Parameters.AddWithValue("@Class", Convert.ToInt32(textBox_Class_Edit.Text));
-            write.Parameters.AddWithValue("@Address", textBox_Address_Edit.Text);
-
-
-            
-
-            write.ExecuteNonQuery();
-            connectionString.Close();
+                write.Parameters.AddWithValue("@IdentificationNumber", textBox_IdentificationNumber_Edit.Text);
+                write.Parameters.AddWithValue("@FirstName", textBox_FirstName_Edit.Text);
+                write.Parameters.AddWithValue("@LastName", textBox_LastName_Edit.Text);
+                write.Parameters.AddWithValue("@Class", Convert.ToInt32(textBox_Class_Edit.Text));
+                write.Parameters.AddWithValue("@Address", textBox_Address_Edit);
 
 
-            MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            Clear_TextBox();
-            Clear();
-            List();
+
+                write.ExecuteNonQuery();
+                connectionString.Close();
+
+
+                MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Clear_TextBox();
+                Clear();
+                List();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Hata!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

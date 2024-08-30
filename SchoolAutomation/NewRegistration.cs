@@ -80,6 +80,7 @@ namespace SchoolAutomation
             {
                 Save();
                 Clear();
+                this.Close();
             }
 
         }
