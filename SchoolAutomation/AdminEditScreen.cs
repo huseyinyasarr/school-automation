@@ -133,7 +133,7 @@ namespace SchoolAutomation
                 write.Parameters.AddWithValue("@FirstName", textBox_FirstName_Edit.Text);
                 write.Parameters.AddWithValue("@LastName", textBox_LastName_Edit.Text);
                 write.Parameters.AddWithValue("@Class", Convert.ToInt32(textBox_Class_Edit.Text));
-                write.Parameters.AddWithValue("@Address", textBox_Address_Edit);
+                write.Parameters.AddWithValue("@Address", textBox_Address_Edit.Text);
 
 
 
