@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SchoolAutomation
 {
@@ -45,6 +46,11 @@ namespace SchoolAutomation
         private void textBox_Student_Password_TextChanged(object sender, EventArgs e)
         {
             var password =  textBox_Student_Password.Text;
+        }
+
+        private void textBox_Teacher_Password_TextChanged(object sender, EventArgs e)
+        {
+            textBox_Teacher_Password.PasswordChar = '*';
         }
     }
 }
