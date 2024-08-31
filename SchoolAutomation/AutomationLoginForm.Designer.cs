@@ -77,6 +77,7 @@
             this.textBox_Student_Password.Name = "textBox_Student_Password";
             this.textBox_Student_Password.Size = new System.Drawing.Size(163, 24);
             this.textBox_Student_Password.TabIndex = 3;
+            this.textBox_Student_Password.TextChanged += new System.EventHandler(this.textBox_Student_Password_TextChanged);
             // 
             // textBox_Student_ID
             // 

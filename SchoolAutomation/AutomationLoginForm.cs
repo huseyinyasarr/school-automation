@@ -41,5 +41,10 @@ namespace SchoolAutomation
         {
 
         }
+
+        private void textBox_Student_Password_TextChanged(object sender, EventArgs e)
+        {
+            var password =  textBox_Student_Password.Text;
+        }
     }
 }
