@@ -146,6 +146,8 @@
             this.textBox_Class_Edit.Name = "textBox_Class_Edit";
             this.textBox_Class_Edit.Size = new System.Drawing.Size(196, 22);
             this.textBox_Class_Edit.TabIndex = 7;
+            this.textBox_Class_Edit.TextChanged += new System.EventHandler(this.textBox_Class_Edit_TextChanged);
+            this.textBox_Class_Edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Class_Edit_KeyPress);
             // 
             // label_Class_Edit
             // 
@@ -178,6 +180,7 @@
             this.textBox_FirstName_Edit.Name = "textBox_FirstName_Edit";
             this.textBox_FirstName_Edit.Size = new System.Drawing.Size(196, 22);
             this.textBox_FirstName_Edit.TabIndex = 3;
+            this.textBox_FirstName_Edit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_FirstName_Edit_KeyDown);
             // 
             // label_FirstName_Edit
             // 
@@ -192,6 +195,7 @@
             // 
             this.textBox_IdentificationNumber_Edit.Location = new System.Drawing.Point(15, 52);
             this.textBox_IdentificationNumber_Edit.Name = "textBox_IdentificationNumber_Edit";
+            this.textBox_IdentificationNumber_Edit.ReadOnly = true;
             this.textBox_IdentificationNumber_Edit.Size = new System.Drawing.Size(196, 22);
             this.textBox_IdentificationNumber_Edit.TabIndex = 1;
             // 
@@ -246,6 +250,7 @@
             this.Controls.Add(this.listView1);
             this.Name = "AdminEditScreen";
             this.Text = "AdminEditScreen";
+            this.Leave += new System.EventHandler(this.AdminEditScreen_Leave);
             this.groupBox_Edit.ResumeLayout(false);
             this.groupBox_Edit.PerformLayout();
             this.ResumeLayout(false);

@@ -54,7 +54,8 @@ namespace SchoolAutomation
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Silme işlemi başarısız. Mesaj : " + ex.Message, "Silme İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                connectionString.Close() ;
+                MessageBox.Show("Silme işlemi başarısız!" , "Silme İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -117,9 +118,16 @@ namespace SchoolAutomation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Delete();
-            Clear();
-            List();
+            try
+            {
+                Delete();
+                Clear();
+                List();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Herhangi bir kişi seçilmedi","Uyarı!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -179,6 +187,30 @@ namespace SchoolAutomation
 
                 MessageBox.Show("Hata!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+        }
+
+        private void textBox_FirstName_Edit_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void AdminEditScreen_Leave(object sender, EventArgs e)
+        {
+            adminScreen.List();
+        }
+
+        private void textBox_Class_Edit_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_Class_Edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Yalnızca rakam giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

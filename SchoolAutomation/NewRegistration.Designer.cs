@@ -50,6 +50,7 @@
             this.textBox_ID.Size = new System.Drawing.Size(168, 22);
             this.textBox_ID.TabIndex = 0;
             this.textBox_ID.TextChanged += new System.EventHandler(this.textBox_ID_TextChanged);
+            this.textBox_ID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_ID_KeyPress);
             // 
             // textBox_Class
             // 
@@ -58,6 +59,7 @@
             this.textBox_Class.Size = new System.Drawing.Size(168, 22);
             this.textBox_Class.TabIndex = 0;
             this.textBox_Class.TextChanged += new System.EventHandler(this.textBox_Class_TextChanged);
+            this.textBox_Class.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Class_KeyPress);
             // 
             // textBox_FirstName
             // 
@@ -79,6 +81,7 @@
             this.textBox_Address.Name = "textBox_Address";
             this.textBox_Address.Size = new System.Drawing.Size(168, 22);
             this.textBox_Address.TabIndex = 0;
+            this.textBox_Address.TextChanged += new System.EventHandler(this.textBox_Address_TextChanged);
             // 
             // label_ID
             // 

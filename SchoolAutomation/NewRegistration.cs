@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -19,9 +20,19 @@ namespace SchoolAutomation
         {
             connectionString.Open();
 
-            SqlCommand write = new SqlCommand("insert into student values ('"+textBox_ID.Text.ToString()+"', '"+ Convert.ToInt32(textBox_Class.Text)+"' , '"+textBox_FirstName.Text.ToString()+"', '"+textBox_LastName.Text.ToString()+"', '"+textBox_Address.Text.ToString()+"')", connectionString);
+            //SqlCommand write = new SqlCommand("INSERT INTO student FirstName=@FirstName, LastName=@LastName, Address=@Address WHERE IdentificationNumber=@IdentificationNumber", connectionString);
 
-            write.ExecuteNonQuery();
+
+            String write = "INSERT INTO dbo.student (IdentificationNumber, Class, FirstName,LastName,Address) VALUES (@IdentificationNumber,@Class,@FirstName,@LastName, @Address)";
+
+            SqlCommand command = new SqlCommand(write, connectionString);
+            command.Parameters.Add("@IdentificationNumber", textBox_ID.Text);
+            command.Parameters.Add("@Class", Convert.ToInt32(textBox_Class.Text));
+            command.Parameters.Add("@FirstName", textBox_FirstName.Text);
+            command.Parameters.Add("@LastName", textBox_LastName.Text);
+            command.Parameters.Add("@Address", textBox_Address.Text);
+
+            command.ExecuteNonQuery();
 
 
             MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -53,14 +64,23 @@ namespace SchoolAutomation
 
         public int YesOrNo()
         {
-            if (textBox_ID.Text == "" || textBox_FirstName.Text == "" || textBox_LastName.Text == "" || Convert.ToInt32(textBox_Class.Text) < 0 || Convert.ToInt32(textBox_Class.Text) > 4 || textBox_Address.Text == "")
+            try
             {
-                MessageBox.Show("Tüm bilgileri doğru girdiğinizden emin olunuz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return 0;
-            }
+                if (textBox_ID.Text == "" || textBox_FirstName.Text == "" || textBox_LastName.Text == "" || Convert.ToInt32(textBox_Class.Text) < 0 || Convert.ToInt32(textBox_Class.Text) > 4 || textBox_Address.Text == "")
+                {
+                    MessageBox.Show("Tüm bilgileri doğru girdiğinizden emin olunuz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return 0;
+                }
 
-            else
+                else
+                {
+                    return 1;
+                }
+            }
+            catch (Exception)
             {
+
+                MessageBox.Show("Hatalı giriş yaptınız!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return 1;
             }
 
@@ -111,7 +131,30 @@ namespace SchoolAutomation
 
         private void textBox_Class_TextChanged(object sender, EventArgs e)
         {
+           
+        }
 
+        private void textBox_Address_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_Class_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Yalnızca rakam giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void textBox_ID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Yalnızca sayı giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
