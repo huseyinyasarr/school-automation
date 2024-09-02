@@ -48,6 +48,7 @@
             this.Controls.Add(this.label1);
             this.Name = "StudentScreen";
             this.Text = "StudentScreen";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StudentScreen_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

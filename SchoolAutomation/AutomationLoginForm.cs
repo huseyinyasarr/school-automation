@@ -24,37 +24,37 @@ namespace SchoolAutomation
 
         private void button_Student_Login_Click(object sender, EventArgs e)
         {
-            connectionString.Open();
-            SqlCommand command = new SqlCommand("select *from student", connectionString);
 
+            //connectionString.Open();
+            //SqlCommand command = new SqlCommand("select *from student", connectionString);
+            //SqlDataReader reader = command.ExecuteReader();
+
+            connectionString.Open();
+            SqlCommand command = new SqlCommand("select * from student where IdentificationNumber='" + textBox_Student_ID.Text + "' and Password='" + textBox_Student_Password.Text + "'", connectionString);
             SqlDataReader reader = command.ExecuteReader();
 
-            while (reader.Read())
+            if (reader.Read())
             {
-                if (reader["IdentificationNumber"].ToString() == textBox_Student_ID.Text && reader["Password"].ToString() == textBox_Student_Password.Text )
-                {
-                    new StudentScreen().ShowDialog();
-                    break;
-                }
-
-                else
-                {
-                    MessageBox.Show("Hata!", "Hata!");
-                    break;
-                }
-
+                reader.Close();
+                this.Hide();
+                new StudentScreen().ShowDialog();
             }
+            else
+            {
+                reader.Close();
+                MessageBox.Show("Kimlik numarası ya da Şifre hatalı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_Student_ID.Clear();
+                textBox_Student_Password.Clear();
+            }
+
             connectionString.Close();
+
 
         }
 
 
         private void button_Teacher_Login_Click(object sender, EventArgs e)
         {
-
-            
-
-
 
 
 
@@ -81,6 +81,12 @@ namespace SchoolAutomation
         private void textBox_Teacher_Password_TextChanged(object sender, EventArgs e)
         {
             textBox_Teacher_Password.PasswordChar = '*';
+        }
+
+        private void AutomationLoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+            new AutomationLoginForm().ShowDialog();
         }
     }
 }

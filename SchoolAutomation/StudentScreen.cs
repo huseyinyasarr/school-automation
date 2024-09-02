@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SchoolAutomation
 {
     public partial class StudentScreen : Form
@@ -15,6 +16,12 @@ namespace SchoolAutomation
         public StudentScreen()
         {
             InitializeComponent();
+        }
+
+        private void StudentScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {         
+            
+            Application.Exit();
         }
     }
 }
