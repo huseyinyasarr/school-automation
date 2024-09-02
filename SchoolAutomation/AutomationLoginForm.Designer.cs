@@ -86,6 +86,7 @@
             this.textBox_Student_ID.Name = "textBox_Student_ID";
             this.textBox_Student_ID.Size = new System.Drawing.Size(163, 24);
             this.textBox_Student_ID.TabIndex = 2;
+            this.textBox_Student_ID.TextChanged += new System.EventHandler(this.textBox_Student_ID_TextChanged);
             // 
             // label_Student_ID
             // 

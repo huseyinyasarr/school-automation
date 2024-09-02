@@ -36,8 +36,13 @@ namespace SchoolAutomation
             if (reader.Read())
             {
                 reader.Close();
+
+                StudentScreen studentScreen = new StudentScreen();
+                studentScreen.id = textBox_Student_ID.Text;
+                studentScreen.Show();
+
                 this.Hide();
-                new StudentScreen().ShowDialog();
+                
             }
             else
             {
@@ -85,8 +90,13 @@ namespace SchoolAutomation
 
         private void AutomationLoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
             new AutomationLoginForm().ShowDialog();
+        }
+
+        private void textBox_Student_ID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
