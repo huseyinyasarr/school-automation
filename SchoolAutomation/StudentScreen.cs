@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,39 +25,56 @@ namespace SchoolAutomation
         {
             InitializeComponent();
 
-            //connectionString.Open();
-            //SqlCommand cmd = new SqlCommand("select *from student", connectionString);
-            //SqlDataReader reader = cmd.ExecuteReader();
-            //label1= reader.
+           
 
         }
 
         
 
         private void StudentScreen_FormClosed(object sender, FormClosedEventArgs e)
-        {         
-            
-            Application.Exit();
-        }
+        {
 
-        private void StudentScreen_Load(object sender, EventArgs e)
+
+            Application.Exit();
+            new AutomationLoginForm().ShowDialog();
+        }
+        protected string pass = "";
+
+        protected void StudentScreen_Load(object sender, EventArgs e)
         {
             
-            textBox_Student_ID.Text = id;
-        }
+            connectionString.Open();
+            SqlCommand cmd = new SqlCommand("select *from student WHERE IdentificationNumber like '" + id + "' ", connectionString);
 
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                label1.Text = reader["Firstname"].ToString();
+                textBox_Student_ID.Text = id;
+                textBox_Student_Address.Text = reader["Address"].ToString();
+                pass = reader["Password"].ToString();
+                
+            }
+
+            connectionString.Close();
+        }
+        
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
+        
+
         private void button_Student_Save_Edit_Click(object sender, EventArgs e)
         {
             connectionString.Open();
 
-            //SqlCommand write = new SqlCommand("UPDATE student SET FirstName=@FirstName, LastName=@LastName, Address=@Address WHERE IdentificationNumber=@IdentificationNumber", connectionString);
-
+            
             SqlCommand write = new SqlCommand("UPDATE student SET Address=@Address WHERE IdentificationNumber=@IdentificationNumber", connectionString);
+
+            
 
             write.Parameters.AddWithValue("@IdentificationNumber", id);
             write.Parameters.AddWithValue("@Address", textBox_Student_Address.Text);
@@ -66,6 +84,34 @@ namespace SchoolAutomation
 
 
             MessageBox.Show("Kayıt başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button_ChangePassword_Click(object sender, EventArgs e)
+        {
+            
+
+            if (string.IsNullOrEmpty(textBox_Student_Password.Text) || string.IsNullOrEmpty(textBox_Student_NewPassword.Text) || string.IsNullOrEmpty(textBox_Student_ConfirmNewPassword.Text) || textBox_Student_Password.Text != pass)
+            {
+                MessageBox.Show("Hatalı Şifre!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            else
+            {
+                connectionString.Open();
+
+
+                SqlCommand write = new SqlCommand("UPDATE student SET Password=@Password WHERE IdentificationNumber like '" + id + "' ", connectionString);
+
+
+
+                write.Parameters.AddWithValue("@Password", textBox_Student_NewPassword.Text);
+
+                write.ExecuteNonQuery();
+                connectionString.Close();
+
+
+                MessageBox.Show("Şifre Değiştirme başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
