@@ -20,6 +20,8 @@ namespace SchoolAutomation
         SqlConnection connectionString = new SqlConnection("Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;");
 
         public string id;
+        protected string pass = "";
+
 
         public StudentScreen()
         {
@@ -38,7 +40,6 @@ namespace SchoolAutomation
             Application.Exit();
             new AutomationLoginForm().ShowDialog();
         }
-        protected string pass = "";
 
         protected void StudentScreen_Load(object sender, EventArgs e)
         {
@@ -89,7 +90,6 @@ namespace SchoolAutomation
         private void button_ChangePassword_Click(object sender, EventArgs e)
         {
             
-
             if (string.IsNullOrEmpty(textBox_Student_Password.Text) || string.IsNullOrEmpty(textBox_Student_NewPassword.Text) || string.IsNullOrEmpty(textBox_Student_ConfirmNewPassword.Text) || textBox_Student_Password.Text != pass)
             {
                 MessageBox.Show("Hatalı Şifre!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -111,7 +111,15 @@ namespace SchoolAutomation
 
 
                 MessageBox.Show("Şifre Değiştirme başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                Application.Restart();
+                Environment.Exit(0);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

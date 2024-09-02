@@ -24,11 +24,6 @@ namespace SchoolAutomation
 
         private void button_Student_Login_Click(object sender, EventArgs e)
         {
-
-            //connectionString.Open();
-            //SqlCommand command = new SqlCommand("select *from student", connectionString);
-            //SqlDataReader reader = command.ExecuteReader();
-
             connectionString.Open();
             SqlCommand command = new SqlCommand("select * from student where IdentificationNumber='" + textBox_Student_ID.Text + "' and Password='" + textBox_Student_Password.Text + "'", connectionString);
             SqlDataReader reader = command.ExecuteReader();
@@ -41,7 +36,6 @@ namespace SchoolAutomation
                 studentScreen.id = textBox_Student_ID.Text;
                 studentScreen.Show();
 
-                this.Hide();
                 
             }
             else
@@ -60,10 +54,29 @@ namespace SchoolAutomation
 
         private void button_Teacher_Login_Click(object sender, EventArgs e)
         {
+            connectionString.Open();
+            SqlCommand command = new SqlCommand("select * from teacher where IdentificationNumber='" + textBox_Teacher_ID.Text + "' and Password='" + textBox_Teacher_Password.Text + "'", connectionString);
+            SqlDataReader reader = command.ExecuteReader();
 
+            if (reader.Read())
+            {
+                reader.Close();
 
+                AdminScreen adminScreen = new AdminScreen();
+                adminScreen.id = textBox_Teacher_ID.Text;
+                adminScreen.Show();
+                this.Close();
 
-            new AdminScreen().ShowDialog();
+            }
+            else
+            {
+                reader.Close();
+                MessageBox.Show("Kimlik numarası ya da Şifre hatalı!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_Teacher_ID.Clear();
+                textBox_Teacher_Password.Clear();
+            }
+
+            connectionString.Close();
 
         }
 
