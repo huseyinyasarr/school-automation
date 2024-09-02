@@ -23,7 +23,12 @@ namespace SchoolAutomation
         public StudentScreen()
         {
             InitializeComponent();
-            
+
+            //connectionString.Open();
+            //SqlCommand cmd = new SqlCommand("select *from student", connectionString);
+            //SqlDataReader reader = cmd.ExecuteReader();
+            //label1= reader.
+
         }
 
         

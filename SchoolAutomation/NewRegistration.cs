@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SchoolAutomation
 {
@@ -66,7 +67,7 @@ namespace SchoolAutomation
         {
             try
             {
-                if (textBox_ID.Text == "" || textBox_FirstName.Text == "" || textBox_LastName.Text == "" || Convert.ToInt32(textBox_Class.Text) < 0 || Convert.ToInt32(textBox_Class.Text) > 4 || textBox_Address.Text == "")
+                if (textBox_ID.Text == "" || textBox_ID.Text.Length != 11 || textBox_FirstName.Text == "" || textBox_LastName.Text == "" || Convert.ToInt32(textBox_Class.Text) < 0 || Convert.ToInt32(textBox_Class.Text) > 4 || textBox_Address.Text == "")
                 {
                     MessageBox.Show("Tüm bilgileri doğru girdiğinizden emin olunuz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return 0;

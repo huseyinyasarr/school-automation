@@ -28,8 +28,8 @@ namespace SchoolAutomation
 
 
                 item.Text = reader.GetString(0);
-                item.SubItems.Add(reader.GetString(2));
                 item.SubItems.Add(reader.GetString(3));
+                item.SubItems.Add(reader.GetString(2));
                 item.SubItems.Add(reader["Class"].ToString());
                 item.SubItems.Add(reader.GetString(4));
 
