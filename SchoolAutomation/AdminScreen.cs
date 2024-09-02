@@ -150,8 +150,7 @@ namespace SchoolAutomation
 
 
                 MessageBox.Show("Şifre Değiştirme başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new AutomationLoginForm().ShowDialog();
-
+                
                 this.Close();
                 Application.Restart();
                 Environment.Exit(0);

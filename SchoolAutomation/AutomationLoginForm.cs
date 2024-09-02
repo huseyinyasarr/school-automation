@@ -65,7 +65,6 @@ namespace SchoolAutomation
                 AdminScreen adminScreen = new AdminScreen();
                 adminScreen.id = textBox_Teacher_ID.Text;
                 adminScreen.Show();
-                this.Close();
 
             }
             else
