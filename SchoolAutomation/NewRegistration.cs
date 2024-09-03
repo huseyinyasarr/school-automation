@@ -202,5 +202,10 @@ namespace SchoolAutomation
             new ImportFileScreen().ShowDialog();
 
         }
+
+        private void button_OpenImportFileScreen_Click(object sender, EventArgs e)
+        {
+            new ImportFileScreen().ShowDialog();
+        }
     }
 }

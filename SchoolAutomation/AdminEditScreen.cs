@@ -132,10 +132,9 @@ namespace SchoolAutomation
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            try
+                try
             {
                 Clear_TextBox();
-
                 textBox_IdentificationNumber_Edit.Text = listView1.SelectedItems[0].SubItems[0].Text;
                 textBox_FirstName_Edit.Text = listView1.SelectedItems[0].SubItems[1].Text;
                 textBox_LastName_Edit.Text = listView1.SelectedItems[0].SubItems[2].Text;

@@ -64,7 +64,7 @@
             // 
             // button_Student_Save_Edit
             // 
-            this.button_Student_Save_Edit.Location = new System.Drawing.Point(103, 147);
+            this.button_Student_Save_Edit.Location = new System.Drawing.Point(103, 149);
             this.button_Student_Save_Edit.Name = "button_Student_Save_Edit";
             this.button_Student_Save_Edit.Size = new System.Drawing.Size(98, 28);
             this.button_Student_Save_Edit.TabIndex = 9;
@@ -124,7 +124,7 @@
             // 
             // button_ChangePassword
             // 
-            this.button_ChangePassword.Location = new System.Drawing.Point(89, 170);
+            this.button_ChangePassword.Location = new System.Drawing.Point(89, 171);
             this.button_ChangePassword.Name = "button_ChangePassword";
             this.button_ChangePassword.Size = new System.Drawing.Size(98, 28);
             this.button_ChangePassword.TabIndex = 11;

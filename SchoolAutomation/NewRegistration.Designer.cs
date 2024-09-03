@@ -44,6 +44,7 @@
             this.button_Cancel = new System.Windows.Forms.Button();
             this.button_Apply = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button_OpenImportFileScreen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox_ID
@@ -174,11 +175,22 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // button_OpenImportFileScreen
+            // 
+            this.button_OpenImportFileScreen.Location = new System.Drawing.Point(245, 266);
+            this.button_OpenImportFileScreen.Name = "button_OpenImportFileScreen";
+            this.button_OpenImportFileScreen.Size = new System.Drawing.Size(75, 23);
+            this.button_OpenImportFileScreen.TabIndex = 7;
+            this.button_OpenImportFileScreen.Text = "button1";
+            this.button_OpenImportFileScreen.UseVisualStyleBackColor = true;
+            this.button_OpenImportFileScreen.Click += new System.EventHandler(this.button_OpenImportFileScreen_Click);
+            // 
             // NewRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 301);
+            this.Controls.Add(this.button_OpenImportFileScreen);
             this.Controls.Add(this.button_Apply);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Save_Registration);
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Button button_Cancel;
         private System.Windows.Forms.Button button_Apply;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button button_OpenImportFileScreen;
     }
 }
