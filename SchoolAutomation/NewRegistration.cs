@@ -21,17 +21,21 @@ namespace SchoolAutomation
         {
             connectionString.Open();
 
-            //SqlCommand write = new SqlCommand("INSERT INTO student FirstName=@FirstName, LastName=@LastName, Address=@Address WHERE IdentificationNumber=@IdentificationNumber", connectionString);
-
-
-            String write = "INSERT INTO dbo.student (IdentificationNumber, Class, FirstName,LastName,Address) VALUES (@IdentificationNumber,@Class,@FirstName,@LastName, @Address)";
+            String write = "INSERT INTO dbo.student (IdentificationNumber, Class, FirstName,LastName,Address,Password) VALUES (@IdentificationNumber,@Class,@FirstName,@LastName, @Address, @Password)";
 
             SqlCommand command = new SqlCommand(write, connectionString);
             command.Parameters.Add("@IdentificationNumber", textBox_ID.Text);
             command.Parameters.Add("@Class", Convert.ToInt32(textBox_Class.Text));
             command.Parameters.Add("@FirstName", textBox_FirstName.Text);
             command.Parameters.Add("@LastName", textBox_LastName.Text);
+            var passwordLastName = textBox_LastName.Text.Substring(0,2);
+            var passwordFirstName = textBox_FirstName.Text.Substring(0,2);
+
+            var password = passwordFirstName + passwordLastName;
+            
             command.Parameters.Add("@Address", textBox_Address.Text);
+            command.Parameters.Add("@Password", PasswordEncryptor.MD5Hash(password));
+
 
             command.ExecuteNonQuery();
 
