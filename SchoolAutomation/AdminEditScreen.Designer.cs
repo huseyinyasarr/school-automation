@@ -249,7 +249,7 @@
             this.Controls.Add(this.groupBox_Edit);
             this.Controls.Add(this.listView1);
             this.Name = "AdminEditScreen";
-            this.Text = "AdminEditScreen";
+            this.Text = "Öğrenci Bilgi Düzenleme Ekranı";
             this.Leave += new System.EventHandler(this.AdminEditScreen_Leave);
             this.groupBox_Edit.ResumeLayout(false);
             this.groupBox_Edit.PerformLayout();

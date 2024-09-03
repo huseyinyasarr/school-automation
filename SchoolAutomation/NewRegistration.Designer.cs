@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewRegistration));
             this.textBox_ID = new System.Windows.Forms.TextBox();
             this.textBox_Class = new System.Windows.Forms.TextBox();
             this.textBox_FirstName = new System.Windows.Forms.TextBox();
@@ -45,7 +46,7 @@
             // 
             // textBox_ID
             // 
-            this.textBox_ID.Location = new System.Drawing.Point(134, 24);
+            this.textBox_ID.Location = new System.Drawing.Point(152, 31);
             this.textBox_ID.Name = "textBox_ID";
             this.textBox_ID.Size = new System.Drawing.Size(168, 22);
             this.textBox_ID.TabIndex = 0;
@@ -54,7 +55,7 @@
             // 
             // textBox_Class
             // 
-            this.textBox_Class.Location = new System.Drawing.Point(134, 60);
+            this.textBox_Class.Location = new System.Drawing.Point(152, 67);
             this.textBox_Class.Name = "textBox_Class";
             this.textBox_Class.Size = new System.Drawing.Size(168, 22);
             this.textBox_Class.TabIndex = 0;
@@ -63,21 +64,23 @@
             // 
             // textBox_FirstName
             // 
-            this.textBox_FirstName.Location = new System.Drawing.Point(134, 96);
+            this.textBox_FirstName.Location = new System.Drawing.Point(152, 103);
             this.textBox_FirstName.Name = "textBox_FirstName";
             this.textBox_FirstName.Size = new System.Drawing.Size(168, 22);
             this.textBox_FirstName.TabIndex = 0;
+            this.textBox_FirstName.TextChanged += new System.EventHandler(this.textBox_FirstName_TextChanged);
             // 
             // textBox_LastName
             // 
-            this.textBox_LastName.Location = new System.Drawing.Point(134, 132);
+            this.textBox_LastName.Location = new System.Drawing.Point(152, 139);
             this.textBox_LastName.Name = "textBox_LastName";
             this.textBox_LastName.Size = new System.Drawing.Size(168, 22);
             this.textBox_LastName.TabIndex = 0;
+            this.textBox_LastName.TextChanged += new System.EventHandler(this.textBox_LastName_TextChanged);
             // 
             // textBox_Address
             // 
-            this.textBox_Address.Location = new System.Drawing.Point(134, 168);
+            this.textBox_Address.Location = new System.Drawing.Point(152, 175);
             this.textBox_Address.Name = "textBox_Address";
             this.textBox_Address.Size = new System.Drawing.Size(168, 22);
             this.textBox_Address.TabIndex = 0;
@@ -86,51 +89,56 @@
             // label_ID
             // 
             this.label_ID.AutoSize = true;
-            this.label_ID.Location = new System.Drawing.Point(16, 27);
+            this.label_ID.Location = new System.Drawing.Point(34, 34);
             this.label_ID.Name = "label_ID";
             this.label_ID.Size = new System.Drawing.Size(103, 16);
             this.label_ID.TabIndex = 1;
             this.label_ID.Text = "Kimlik Numarası";
+            this.label_ID.Click += new System.EventHandler(this.label_ID_Click);
             // 
             // label_Class
             // 
             this.label_Class.AutoSize = true;
-            this.label_Class.Location = new System.Drawing.Point(16, 63);
+            this.label_Class.Location = new System.Drawing.Point(34, 70);
             this.label_Class.Name = "label_Class";
             this.label_Class.Size = new System.Drawing.Size(35, 16);
             this.label_Class.TabIndex = 1;
             this.label_Class.Text = "Sınıfı";
+            this.label_Class.Click += new System.EventHandler(this.label_Class_Click);
             // 
             // label_FirstName
             // 
             this.label_FirstName.AutoSize = true;
-            this.label_FirstName.Location = new System.Drawing.Point(16, 99);
+            this.label_FirstName.Location = new System.Drawing.Point(34, 106);
             this.label_FirstName.Name = "label_FirstName";
             this.label_FirstName.Size = new System.Drawing.Size(31, 16);
             this.label_FirstName.TabIndex = 1;
             this.label_FirstName.Text = "İsim";
+            this.label_FirstName.Click += new System.EventHandler(this.label_FirstName_Click);
             // 
             // label_LastName
             // 
             this.label_LastName.AutoSize = true;
-            this.label_LastName.Location = new System.Drawing.Point(16, 135);
+            this.label_LastName.Location = new System.Drawing.Point(34, 142);
             this.label_LastName.Name = "label_LastName";
             this.label_LastName.Size = new System.Drawing.Size(55, 16);
             this.label_LastName.TabIndex = 1;
             this.label_LastName.Text = "Soyisim";
+            this.label_LastName.Click += new System.EventHandler(this.label_LastName_Click);
             // 
             // label_Address
             // 
             this.label_Address.AutoSize = true;
-            this.label_Address.Location = new System.Drawing.Point(16, 171);
+            this.label_Address.Location = new System.Drawing.Point(34, 178);
             this.label_Address.Name = "label_Address";
             this.label_Address.Size = new System.Drawing.Size(43, 16);
             this.label_Address.TabIndex = 1;
             this.label_Address.Text = "Adres";
+            this.label_Address.Click += new System.EventHandler(this.label_Address_Click);
             // 
             // button_Save_Registration
             // 
-            this.button_Save_Registration.Location = new System.Drawing.Point(389, 238);
+            this.button_Save_Registration.Location = new System.Drawing.Point(245, 238);
             this.button_Save_Registration.Name = "button_Save_Registration";
             this.button_Save_Registration.Size = new System.Drawing.Size(98, 28);
             this.button_Save_Registration.TabIndex = 2;
@@ -140,7 +148,7 @@
             // 
             // button_Cancel
             // 
-            this.button_Cancel.Location = new System.Drawing.Point(271, 238);
+            this.button_Cancel.Location = new System.Drawing.Point(127, 238);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(98, 28);
             this.button_Cancel.TabIndex = 3;
@@ -150,7 +158,7 @@
             // 
             // button_Apply
             // 
-            this.button_Apply.Location = new System.Drawing.Point(154, 238);
+            this.button_Apply.Location = new System.Drawing.Point(10, 238);
             this.button_Apply.Name = "button_Apply";
             this.button_Apply.Size = new System.Drawing.Size(98, 28);
             this.button_Apply.TabIndex = 3;
@@ -162,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 278);
+            this.ClientSize = new System.Drawing.Size(355, 278);
             this.Controls.Add(this.button_Apply);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Save_Registration);
@@ -176,6 +184,7 @@
             this.Controls.Add(this.textBox_FirstName);
             this.Controls.Add(this.textBox_Class);
             this.Controls.Add(this.textBox_ID);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewRegistration";
             this.Text = "Öğrenci Kayıt Sistemi";
             this.Load += new System.EventHandler(this.NewRegistration_Load);

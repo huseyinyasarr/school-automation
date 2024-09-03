@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentScreen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button_Student_Save_Edit = new System.Windows.Forms.Button();
             this.label_Student_Address = new System.Windows.Forms.Label();
@@ -200,8 +201,9 @@
             this.ClientSize = new System.Drawing.Size(516, 316);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentScreen";
-            this.Text = "StudentScreen";
+            this.Text = "Öğrenci Ekranı";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StudentScreen_FormClosed);
             this.Load += new System.EventHandler(this.StudentScreen_Load);
             this.panel1.ResumeLayout(false);

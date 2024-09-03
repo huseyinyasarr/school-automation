@@ -157,5 +157,40 @@ namespace SchoolAutomation
                 MessageBox.Show("Yalnızca sayı giriniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void label_Address_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_LastName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_FirstName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Class_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_ID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_LastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_FirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

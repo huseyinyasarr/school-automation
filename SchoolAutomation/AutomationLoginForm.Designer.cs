@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutomationLoginForm));
             this.groupBox_Student_Login = new System.Windows.Forms.GroupBox();
             this.label_Student_Password = new System.Windows.Forms.Label();
             this.textBox_Student_Password = new System.Windows.Forms.TextBox();
@@ -180,9 +181,10 @@
             this.Controls.Add(this.groupBox_Student_Login);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AutomationLoginForm";
-            this.Text = "Otomasyon";
+            this.Text = "Sistem Giriş Ekranı";
             this.Load += new System.EventHandler(this.AutomationLoginForm_Load);
             this.groupBox_Student_Login.ResumeLayout(false);
             this.groupBox_Student_Login.PerformLayout();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminScreen));
             this.button_New_Registration = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,19 +47,19 @@
             this.textBox_Teacher_ConfirmNewPassword = new System.Windows.Forms.TextBox();
             this.button_ChangePassword = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox_Teacher_FirstName = new System.Windows.Forms.TextBox();
-            this.textBox_Teacher_LastName = new System.Windows.Forms.TextBox();
-            this.textBox_Teacher_Branch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_Teacher_Branch = new System.Windows.Forms.TextBox();
+            this.textBox_Teacher_LastName = new System.Windows.Forms.TextBox();
+            this.textBox_Teacher_FirstName = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -160,7 +161,7 @@
             // 
             // textBox_Teacher_Address
             // 
-            this.textBox_Teacher_Address.Location = new System.Drawing.Point(18, 259);
+            this.textBox_Teacher_Address.Location = new System.Drawing.Point(18, 265);
             this.textBox_Teacher_Address.Name = "textBox_Teacher_Address";
             this.textBox_Teacher_Address.Size = new System.Drawing.Size(166, 22);
             this.textBox_Teacher_Address.TabIndex = 8;
@@ -178,7 +179,7 @@
             // 
             // textBox_Teacher_Password
             // 
-            this.textBox_Teacher_Password.Location = new System.Drawing.Point(21, 38);
+            this.textBox_Teacher_Password.Location = new System.Drawing.Point(21, 45);
             this.textBox_Teacher_Password.Name = "textBox_Teacher_Password";
             this.textBox_Teacher_Password.PasswordChar = '*';
             this.textBox_Teacher_Password.Size = new System.Drawing.Size(166, 22);
@@ -186,7 +187,7 @@
             // 
             // textBox_Teacher_NewPassword
             // 
-            this.textBox_Teacher_NewPassword.Location = new System.Drawing.Point(21, 91);
+            this.textBox_Teacher_NewPassword.Location = new System.Drawing.Point(21, 98);
             this.textBox_Teacher_NewPassword.Name = "textBox_Teacher_NewPassword";
             this.textBox_Teacher_NewPassword.PasswordChar = '*';
             this.textBox_Teacher_NewPassword.Size = new System.Drawing.Size(166, 22);
@@ -194,7 +195,7 @@
             // 
             // textBox_Teacher_ConfirmNewPassword
             // 
-            this.textBox_Teacher_ConfirmNewPassword.Location = new System.Drawing.Point(21, 142);
+            this.textBox_Teacher_ConfirmNewPassword.Location = new System.Drawing.Point(21, 149);
             this.textBox_Teacher_ConfirmNewPassword.Name = "textBox_Teacher_ConfirmNewPassword";
             this.textBox_Teacher_ConfirmNewPassword.PasswordChar = '*';
             this.textBox_Teacher_ConfirmNewPassword.Size = new System.Drawing.Size(166, 22);
@@ -202,7 +203,7 @@
             // 
             // button_ChangePassword
             // 
-            this.button_ChangePassword.Location = new System.Drawing.Point(89, 170);
+            this.button_ChangePassword.Location = new System.Drawing.Point(89, 177);
             this.button_ChangePassword.Name = "button_ChangePassword";
             this.button_ChangePassword.Size = new System.Drawing.Size(98, 28);
             this.button_ChangePassword.TabIndex = 13;
@@ -230,6 +231,72 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hesap Bilgileri";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 192);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 16);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Branş";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 246);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 16);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Adres";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 138);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 16);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Soyadı";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 16);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Adı";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 16);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Kimlik Numarası";
+            // 
+            // textBox_Teacher_Branch
+            // 
+            this.textBox_Teacher_Branch.Location = new System.Drawing.Point(18, 211);
+            this.textBox_Teacher_Branch.Name = "textBox_Teacher_Branch";
+            this.textBox_Teacher_Branch.Size = new System.Drawing.Size(166, 22);
+            this.textBox_Teacher_Branch.TabIndex = 12;
+            // 
+            // textBox_Teacher_LastName
+            // 
+            this.textBox_Teacher_LastName.Location = new System.Drawing.Point(18, 157);
+            this.textBox_Teacher_LastName.Name = "textBox_Teacher_LastName";
+            this.textBox_Teacher_LastName.Size = new System.Drawing.Size(166, 22);
+            this.textBox_Teacher_LastName.TabIndex = 11;
+            // 
+            // textBox_Teacher_FirstName
+            // 
+            this.textBox_Teacher_FirstName.Location = new System.Drawing.Point(18, 103);
+            this.textBox_Teacher_FirstName.Name = "textBox_Teacher_FirstName";
+            this.textBox_Teacher_FirstName.Size = new System.Drawing.Size(166, 22);
+            this.textBox_Teacher_FirstName.TabIndex = 10;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.listView1);
@@ -241,72 +308,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(815, 338);
             this.panel1.TabIndex = 15;
-            // 
-            // textBox_Teacher_FirstName
-            // 
-            this.textBox_Teacher_FirstName.Location = new System.Drawing.Point(18, 103);
-            this.textBox_Teacher_FirstName.Name = "textBox_Teacher_FirstName";
-            this.textBox_Teacher_FirstName.Size = new System.Drawing.Size(166, 22);
-            this.textBox_Teacher_FirstName.TabIndex = 10;
-            // 
-            // textBox_Teacher_LastName
-            // 
-            this.textBox_Teacher_LastName.Location = new System.Drawing.Point(18, 153);
-            this.textBox_Teacher_LastName.Name = "textBox_Teacher_LastName";
-            this.textBox_Teacher_LastName.Size = new System.Drawing.Size(166, 22);
-            this.textBox_Teacher_LastName.TabIndex = 11;
-            // 
-            // textBox_Teacher_Branch
-            // 
-            this.textBox_Teacher_Branch.Location = new System.Drawing.Point(18, 207);
-            this.textBox_Teacher_Branch.Name = "textBox_Teacher_Branch";
-            this.textBox_Teacher_Branch.Size = new System.Drawing.Size(166, 22);
-            this.textBox_Teacher_Branch.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 16);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Kimlik Numarası";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 16);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Adı";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 135);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 16);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Soyadı";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 241);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 16);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Adres";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 189);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 16);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Branş";
             // 
             // groupBox2
             // 
@@ -324,32 +325,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Şifre Değiştir";
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Eski Şifre";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(21, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 16);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Şifreni Onayla";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 69);
+            this.label7.Location = new System.Drawing.Point(21, 76);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 16);
             this.label7.TabIndex = 1;
             this.label7.Text = "Yeni Şifre";
             // 
-            // label8
+            // label6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 120);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 16);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Şifreni Onayla";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Eski Şifre";
             // 
             // AdminScreen
             // 
@@ -360,8 +361,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminScreen";
-            this.Text = "Form1";
+            this.Text = "Öğretmen Ekranı";
             this.Load += new System.EventHandler(this.AdminScreen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
