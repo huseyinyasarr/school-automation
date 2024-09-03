@@ -25,7 +25,7 @@ namespace SchoolAutomation
         private void button_Student_Login_Click(object sender, EventArgs e)
         {
             connectionString.Open();
-            SqlCommand command = new SqlCommand("select * from student where IdentificationNumber='" + textBox_Student_ID.Text + "' and Password='" + textBox_Student_Password.Text + "'", connectionString);
+            SqlCommand command = new SqlCommand("select * from student where IdentificationNumber='" + textBox_Student_ID.Text + "' and Password='" + PasswordEncryptor.MD5Hash(textBox_Student_Password.Text) + "'", connectionString);
             SqlDataReader reader = command.ExecuteReader();
 
             if (reader.Read())
@@ -55,7 +55,7 @@ namespace SchoolAutomation
         private void button_Teacher_Login_Click(object sender, EventArgs e)
         {
             connectionString.Open();
-            SqlCommand command = new SqlCommand("select * from teacher where IdentificationNumber='" + textBox_Teacher_ID.Text + "' and Password='" + textBox_Teacher_Password.Text + "'", connectionString);
+            SqlCommand command = new SqlCommand("select * from teacher where IdentificationNumber='" + textBox_Teacher_ID.Text + "' and Password='" + PasswordEncryptor.MD5Hash(textBox_Teacher_Password.Text) + "'", connectionString);
             SqlDataReader reader = command.ExecuteReader();
 
             if (reader.Read())
@@ -114,7 +114,7 @@ namespace SchoolAutomation
         private void button1_Click(object sender, EventArgs e)
         {
             var encPass = PasswordEncryptor.MD5Hash(textBox1.Text);
-            MessageBox.Show($"mb {encPass}","jgh");
+            MessageBox.Show($"{encPass}","jgh");
 
 
 
