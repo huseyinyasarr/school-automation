@@ -110,5 +110,16 @@ namespace SchoolAutomation
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var encPass = PasswordEncryptor.MD5Hash(textBox1.Text);
+            MessageBox.Show($"mb {encPass}","jgh");
+
+
+
+
+
+        }
     }
 }

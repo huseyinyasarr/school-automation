@@ -40,12 +40,16 @@
             this.textBox_Teacher_ID = new System.Windows.Forms.TextBox();
             this.label_Teacher_ID = new System.Windows.Forms.Label();
             this.button_Teacher_Login = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox_Student_Login.SuspendLayout();
             this.groupBox_Teacher_Login.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_Student_Login
             // 
+            this.groupBox_Student_Login.Controls.Add(this.button1);
+            this.groupBox_Student_Login.Controls.Add(this.textBox1);
             this.groupBox_Student_Login.Controls.Add(this.label_Student_Password);
             this.groupBox_Student_Login.Controls.Add(this.textBox_Student_Password);
             this.groupBox_Student_Login.Controls.Add(this.textBox_Student_ID);
@@ -171,6 +175,23 @@
             this.button_Teacher_Login.UseVisualStyleBackColor = true;
             this.button_Teacher_Login.Click += new System.EventHandler(this.button_Teacher_Login_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(21, 225);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 24);
+            this.textBox1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(127, 226);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AutomationLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -206,6 +227,8 @@
         private System.Windows.Forms.TextBox textBox_Teacher_ID;
         private System.Windows.Forms.Label label_Teacher_ID;
         private System.Windows.Forms.Button button_Teacher_Login;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
