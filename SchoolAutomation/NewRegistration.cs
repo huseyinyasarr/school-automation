@@ -15,7 +15,7 @@ namespace SchoolAutomation
 
         SqlConnection connectionString = new SqlConnection("Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;");
 
-        
+
 
         public void Save()
         {
@@ -28,11 +28,11 @@ namespace SchoolAutomation
             command.Parameters.Add("@Class", Convert.ToInt32(textBox_Class.Text));
             command.Parameters.Add("@FirstName", textBox_FirstName.Text);
             command.Parameters.Add("@LastName", textBox_LastName.Text);
-            var passwordLastName = textBox_LastName.Text.Substring(0,2);
-            var passwordFirstName = textBox_FirstName.Text.Substring(0,2);
+            var passwordLastName = textBox_LastName.Text.Substring(0, 2);
+            var passwordFirstName = textBox_FirstName.Text.Substring(0, 2);
 
             var password = passwordFirstName + passwordLastName;
-            
+
             command.Parameters.Add("@Address", textBox_Address.Text);
             command.Parameters.Add("@Password", PasswordEncryptor.MD5Hash(password));
 
@@ -127,16 +127,16 @@ namespace SchoolAutomation
             else
             {
                 Save();
-                
+
                 Clear();
-                
+
             }
 
         }
 
         private void textBox_Class_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void textBox_Address_TextChanged(object sender, EventArgs e)
@@ -195,6 +195,18 @@ namespace SchoolAutomation
         private void textBox_FirstName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Dosyası(*.xlsx)|*.xlsx|Tüm Dosyalar(*.*)|*.*";
+
+            if (openFileDialog.ShowDialog()==DialogResult.OK)
+            {
+                string filepath = openFileDialog.FileName;
+                textBox_FilePath.Text = filepath;
+            }
         }
     }
 }

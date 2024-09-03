@@ -42,6 +42,8 @@
             this.button_Save_Registration = new System.Windows.Forms.Button();
             this.button_Cancel = new System.Windows.Forms.Button();
             this.button_Apply = new System.Windows.Forms.Button();
+            this.button_ImportFile = new System.Windows.Forms.Button();
+            this.textBox_FilePath = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox_ID
@@ -138,7 +140,7 @@
             // 
             // button_Save_Registration
             // 
-            this.button_Save_Registration.Location = new System.Drawing.Point(245, 238);
+            this.button_Save_Registration.Location = new System.Drawing.Point(245, 221);
             this.button_Save_Registration.Name = "button_Save_Registration";
             this.button_Save_Registration.Size = new System.Drawing.Size(98, 28);
             this.button_Save_Registration.TabIndex = 2;
@@ -148,7 +150,7 @@
             // 
             // button_Cancel
             // 
-            this.button_Cancel.Location = new System.Drawing.Point(127, 238);
+            this.button_Cancel.Location = new System.Drawing.Point(127, 221);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(98, 28);
             this.button_Cancel.TabIndex = 3;
@@ -158,7 +160,7 @@
             // 
             // button_Apply
             // 
-            this.button_Apply.Location = new System.Drawing.Point(10, 238);
+            this.button_Apply.Location = new System.Drawing.Point(10, 221);
             this.button_Apply.Name = "button_Apply";
             this.button_Apply.Size = new System.Drawing.Size(98, 28);
             this.button_Apply.TabIndex = 3;
@@ -166,11 +168,30 @@
             this.button_Apply.UseVisualStyleBackColor = true;
             this.button_Apply.Click += new System.EventHandler(this.button_Apply_Click);
             // 
+            // button_ImportFile
+            // 
+            this.button_ImportFile.Location = new System.Drawing.Point(9, 261);
+            this.button_ImportFile.Name = "button_ImportFile";
+            this.button_ImportFile.Size = new System.Drawing.Size(128, 28);
+            this.button_ImportFile.TabIndex = 4;
+            this.button_ImportFile.Text = "İçeri Dosya Aktar";
+            this.button_ImportFile.UseVisualStyleBackColor = true;
+            this.button_ImportFile.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox_FilePath
+            // 
+            this.textBox_FilePath.Location = new System.Drawing.Point(143, 264);
+            this.textBox_FilePath.Name = "textBox_FilePath";
+            this.textBox_FilePath.Size = new System.Drawing.Size(200, 22);
+            this.textBox_FilePath.TabIndex = 5;
+            // 
             // NewRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 278);
+            this.ClientSize = new System.Drawing.Size(355, 301);
+            this.Controls.Add(this.textBox_FilePath);
+            this.Controls.Add(this.button_ImportFile);
             this.Controls.Add(this.button_Apply);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Save_Registration);
@@ -208,5 +229,7 @@
         private System.Windows.Forms.Button button_Save_Registration;
         private System.Windows.Forms.Button button_Cancel;
         private System.Windows.Forms.Button button_Apply;
+        private System.Windows.Forms.Button button_ImportFile;
+        private System.Windows.Forms.TextBox textBox_FilePath;
     }
 }
