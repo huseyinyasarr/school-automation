@@ -73,6 +73,12 @@
     <Compile Include="AdminScreen.Designer.cs">
       <DependentUpon>AdminScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImportFileScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportFileScreen.Designer.cs">
+      <DependentUpon>ImportFileScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AutomationLoginForm.resx">
       <DependentUpon>AutomationLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportFileScreen.resx">
+      <DependentUpon>ImportFileScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewRegistration.resx">
       <DependentUpon>NewRegistration.cs</DependentUpon>

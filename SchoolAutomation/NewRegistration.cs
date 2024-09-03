@@ -199,14 +199,8 @@ namespace SchoolAutomation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel Dosyası(*.xlsx)|*.xlsx|Tüm Dosyalar(*.*)|*.*";
+            new ImportFileScreen().ShowDialog();
 
-            if (openFileDialog.ShowDialog()==DialogResult.OK)
-            {
-                string filepath = openFileDialog.FileName;
-                textBox_FilePath.Text = filepath;
-            }
         }
     }
 }

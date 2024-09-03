@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewRegistration));
             this.textBox_ID = new System.Windows.Forms.TextBox();
             this.textBox_Class = new System.Windows.Forms.TextBox();
@@ -42,8 +43,7 @@
             this.button_Save_Registration = new System.Windows.Forms.Button();
             this.button_Cancel = new System.Windows.Forms.Button();
             this.button_Apply = new System.Windows.Forms.Button();
-            this.button_ImportFile = new System.Windows.Forms.Button();
-            this.textBox_FilePath = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // textBox_ID
@@ -168,30 +168,17 @@
             this.button_Apply.UseVisualStyleBackColor = true;
             this.button_Apply.Click += new System.EventHandler(this.button_Apply_Click);
             // 
-            // button_ImportFile
+            // contextMenuStrip1
             // 
-            this.button_ImportFile.Location = new System.Drawing.Point(9, 261);
-            this.button_ImportFile.Name = "button_ImportFile";
-            this.button_ImportFile.Size = new System.Drawing.Size(128, 28);
-            this.button_ImportFile.TabIndex = 4;
-            this.button_ImportFile.Text = "İçeri Dosya Aktar";
-            this.button_ImportFile.UseVisualStyleBackColor = true;
-            this.button_ImportFile.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox_FilePath
-            // 
-            this.textBox_FilePath.Location = new System.Drawing.Point(143, 264);
-            this.textBox_FilePath.Name = "textBox_FilePath";
-            this.textBox_FilePath.Size = new System.Drawing.Size(200, 22);
-            this.textBox_FilePath.TabIndex = 5;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // NewRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 301);
-            this.Controls.Add(this.textBox_FilePath);
-            this.Controls.Add(this.button_ImportFile);
             this.Controls.Add(this.button_Apply);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Save_Registration);
@@ -229,7 +216,6 @@
         private System.Windows.Forms.Button button_Save_Registration;
         private System.Windows.Forms.Button button_Cancel;
         private System.Windows.Forms.Button button_Apply;
-        private System.Windows.Forms.Button button_ImportFile;
-        private System.Windows.Forms.TextBox textBox_FilePath;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
