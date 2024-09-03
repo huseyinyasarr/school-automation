@@ -129,7 +129,7 @@ namespace SchoolAutomation
 
         private void button_ChangePassword_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox_Teacher_Password.Text) || string.IsNullOrEmpty(textBox_Teacher_NewPassword.Text) || string.IsNullOrEmpty(textBox_Teacher_ConfirmNewPassword.Text) || textBox_Teacher_NewPassword.Text != textBox_Teacher_ConfirmNewPassword.Text || textBox_Teacher_Password.Text != pass)
+            if (string.IsNullOrEmpty(textBox_Teacher_Password.Text) || string.IsNullOrEmpty(textBox_Teacher_NewPassword.Text) || string.IsNullOrEmpty(textBox_Teacher_ConfirmNewPassword.Text) || textBox_Teacher_NewPassword.Text != textBox_Teacher_ConfirmNewPassword.Text || PasswordEncryptor.MD5Hash(textBox_Teacher_Password.Text) != pass)
             {
                 MessageBox.Show("Hatalı Şifre!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -143,7 +143,7 @@ namespace SchoolAutomation
 
 
 
-                write.Parameters.AddWithValue("@Password", textBox_Teacher_NewPassword.Text);
+                write.Parameters.AddWithValue("@Password", PasswordEncryptor.MD5Hash(textBox_Teacher_NewPassword.Text));
 
                 write.ExecuteNonQuery();
                 connectionString.Close();

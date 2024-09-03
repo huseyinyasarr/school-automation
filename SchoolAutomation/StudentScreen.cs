@@ -10,6 +10,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
@@ -90,7 +91,7 @@ namespace SchoolAutomation
         private void button_ChangePassword_Click(object sender, EventArgs e)
         {
             
-            if (string.IsNullOrEmpty(textBox_Student_Password.Text) || string.IsNullOrEmpty(textBox_Student_NewPassword.Text) || string.IsNullOrEmpty(textBox_Student_ConfirmNewPassword.Text) || textBox_Student_Password.Text != pass)
+            if (string.IsNullOrEmpty(textBox_Student_Password.Text) || string.IsNullOrEmpty(textBox_Student_NewPassword.Text) || string.IsNullOrEmpty(textBox_Student_ConfirmNewPassword.Text) || PasswordEncryptor.MD5Hash(textBox_Student_Password.Text) != pass || textBox_Student_NewPassword.Text != textBox_Student_ConfirmNewPassword.Text )
             {
                 MessageBox.Show("Hatalı Şifre!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -104,7 +105,7 @@ namespace SchoolAutomation
 
 
 
-                write.Parameters.AddWithValue("@Password", textBox_Student_NewPassword.Text);
+                write.Parameters.AddWithValue("@Password", PasswordEncryptor.MD5Hash(textBox_Student_NewPassword.Text));
 
                 write.ExecuteNonQuery();
                 connectionString.Close();
