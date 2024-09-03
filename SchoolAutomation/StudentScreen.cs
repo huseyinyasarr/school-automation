@@ -52,7 +52,7 @@ namespace SchoolAutomation
 
             while (reader.Read())
             {
-                label1.Text = reader["Firstname"].ToString();
+                label1.Text = "Hoşgeldin\n" + reader["Firstname"].ToString() + " " + reader["LastName"];
                 textBox_Student_ID.Text = id;
                 textBox_Student_Address.Text = reader["Address"].ToString();
                 pass = reader["Password"].ToString();

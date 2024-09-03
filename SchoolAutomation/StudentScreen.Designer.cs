@@ -29,21 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.button_Student_Save_Edit = new System.Windows.Forms.Button();
             this.label_Student_Address = new System.Windows.Forms.Label();
             this.label_Student_ID = new System.Windows.Forms.Label();
             this.textBox_Student_Address = new System.Windows.Forms.TextBox();
             this.textBox_Student_ID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_ChangePassword = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Student_ConfirmNewPassword = new System.Windows.Forms.TextBox();
             this.textBox_Student_NewPassword = new System.Windows.Forms.TextBox();
             this.textBox_Student_Password = new System.Windows.Forms.TextBox();
             this.label_Student_Password = new System.Windows.Forms.Label();
-            this.button_ChangePassword = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,26 +55,17 @@
             this.panel1.Controls.Add(this.textBox_Student_Address);
             this.panel1.Controls.Add(this.textBox_Student_ID);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 75);
+            this.panel1.Location = new System.Drawing.Point(12, 57);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 245);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Hoşgeldin";
-            // 
             // button_Student_Save_Edit
             // 
-            this.button_Student_Save_Edit.Location = new System.Drawing.Point(126, 163);
+            this.button_Student_Save_Edit.Location = new System.Drawing.Point(103, 147);
             this.button_Student_Save_Edit.Name = "button_Student_Save_Edit";
-            this.button_Student_Save_Edit.Size = new System.Drawing.Size(75, 23);
+            this.button_Student_Save_Edit.Size = new System.Drawing.Size(98, 28);
             this.button_Student_Save_Edit.TabIndex = 9;
             this.button_Student_Save_Edit.Text = "Kaydet";
             this.button_Student_Save_Edit.UseVisualStyleBackColor = true;
@@ -114,17 +104,6 @@
             this.textBox_Student_ID.Size = new System.Drawing.Size(166, 22);
             this.textBox_Student_ID.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(235, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button_ChangePassword);
@@ -141,6 +120,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Şifre Değiştir";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button_ChangePassword
+            // 
+            this.button_ChangePassword.Location = new System.Drawing.Point(89, 170);
+            this.button_ChangePassword.Name = "button_ChangePassword";
+            this.button_ChangePassword.Size = new System.Drawing.Size(98, 28);
+            this.button_ChangePassword.TabIndex = 11;
+            this.button_ChangePassword.Text = "Değiştir";
+            this.button_ChangePassword.UseVisualStyleBackColor = true;
+            this.button_ChangePassword.Click += new System.EventHandler(this.button_ChangePassword_Click);
             // 
             // label4
             // 
@@ -193,22 +182,22 @@
             this.label_Student_Password.TabIndex = 6;
             this.label_Student_Password.Text = "Eski Şifre";
             // 
-            // button_ChangePassword
+            // label1
             // 
-            this.button_ChangePassword.Location = new System.Drawing.Point(112, 170);
-            this.button_ChangePassword.Name = "button_ChangePassword";
-            this.button_ChangePassword.Size = new System.Drawing.Size(75, 23);
-            this.button_ChangePassword.TabIndex = 11;
-            this.button_ChangePassword.Text = "Değiştir";
-            this.button_ChangePassword.UseVisualStyleBackColor = true;
-            this.button_ChangePassword.Click += new System.EventHandler(this.button_ChangePassword_Click);
+            this.label1.AutoSize = true;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // StudentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 332);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(516, 316);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "StudentScreen";
@@ -235,7 +224,6 @@
         private System.Windows.Forms.TextBox textBox_Student_Address;
         private System.Windows.Forms.TextBox textBox_Student_ID;
         private System.Windows.Forms.Button button_Student_Save_Edit;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

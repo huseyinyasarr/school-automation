@@ -51,7 +51,7 @@ namespace SchoolAutomation
 
         }
 
-       
+
 
         private void AdminScreen_Load(object sender, EventArgs e)
         {
@@ -62,9 +62,13 @@ namespace SchoolAutomation
 
             while (reader.Read())
             {
-                label_Teacher_FirstName.Text = reader["Firstname"].ToString();
+                label_Teacher_FirstName.Text = "Hoşgeldin" + reader["Firstname"].ToString() + " " + reader["LastName"];
                 textBox_Teacher_ID.Text = id;
                 textBox_Teacher_Address.Text = reader["Address"].ToString();
+                textBox_Teacher_FirstName.Text = reader["FirstName"].ToString();
+                textBox_Teacher_LastName.Text = reader["LastName"].ToString();
+                textBox_Teacher_Branch.Text = reader["Branch"].ToString();
+
                 pass = reader["Password"].ToString();
 
             }
@@ -150,13 +154,28 @@ namespace SchoolAutomation
 
 
                 MessageBox.Show("Şifre Değiştirme başarılı", "Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
                 this.Close();
                 Application.Restart();
                 Environment.Exit(0);
 
 
             }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_Teacher_ID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_Teacher_Address_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
