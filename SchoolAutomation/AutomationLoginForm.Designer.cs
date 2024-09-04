@@ -185,6 +185,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AutomationLoginForm";
             this.Text = "Sistem Giriş Ekranı";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AutomationLoginForm_FormClosed_1);
             this.Load += new System.EventHandler(this.AutomationLoginForm_Load);
             this.groupBox_Student_Login.ResumeLayout(false);
             this.groupBox_Student_Login.PerformLayout();

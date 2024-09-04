@@ -115,5 +115,10 @@ namespace SchoolAutomation
         {
             
         }
+
+        private void AutomationLoginForm_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

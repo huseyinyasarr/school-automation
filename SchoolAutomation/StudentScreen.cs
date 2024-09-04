@@ -51,9 +51,10 @@ namespace SchoolAutomation
 
             while (reader.Read())
             {
-                label1.Text = "Hoşgeldin\n" + reader["Firstname"].ToString() + " " + reader["LastName"];
+                textBox_FirstNameAndLastName.Text =reader["Firstname"].ToString() + " " + reader["LastName"];
                 textBox_Student_ID.Text = id;
                 textBox_Student_Address.Text = reader["Address"].ToString();
+                textBox_Class.Text = reader["Class"].ToString();
                 pass = reader["Password"].ToString();
                 
             }
@@ -93,6 +94,9 @@ namespace SchoolAutomation
             if (string.IsNullOrEmpty(textBox_Student_Password.Text) || string.IsNullOrEmpty(textBox_Student_NewPassword.Text) || string.IsNullOrEmpty(textBox_Student_ConfirmNewPassword.Text) || PasswordEncryptor.MD5Hash(textBox_Student_Password.Text) != pass || textBox_Student_NewPassword.Text != textBox_Student_ConfirmNewPassword.Text )
             {
                 MessageBox.Show("Hatalı Şifre!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_Student_Password.Clear();
+                textBox_Student_NewPassword.Clear();
+                textBox_Student_ConfirmNewPassword.Clear();
             }
 
             else
@@ -118,6 +122,11 @@ namespace SchoolAutomation
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

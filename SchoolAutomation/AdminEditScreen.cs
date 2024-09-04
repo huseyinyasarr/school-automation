@@ -142,7 +142,6 @@ namespace SchoolAutomation
                 textBox_Address_Edit.Text = listView1.SelectedItems[0].SubItems[4].Text;
 
                 Clear();
-                List();
             }
             catch (Exception)
             {

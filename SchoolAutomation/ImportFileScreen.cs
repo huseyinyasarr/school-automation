@@ -20,13 +20,13 @@ namespace SchoolAutomation
 
         private void dataGridView_ImportData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void button_ImportFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel Dosyaları(*.xlsx)|*.xlsx|Tüm Dosyalar(*.*)|*.*";
+            openFileDialog.Filter = "Excel Dosyaları(*.xlsx)|*.xlsx";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -51,8 +51,13 @@ namespace SchoolAutomation
 
         }
 
+
         private void SaveDataGridViewToSQL()
         {
+            var passwordLastName = "";
+            var passwordFirstName = "";
+            var password = "";
+
             string connectionString = "Server=(localdb)\\localDB1;Database=SchoolDb;Trusted_Connection=True;";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -67,24 +72,31 @@ namespace SchoolAutomation
                     string column3Value = row.Cells["FirstName"].Value.ToString();
                     string column4Value = row.Cells["LastName"].Value.ToString();
                     string column5Value = row.Cells["Address"].Value.ToString();
-                    string column6Value = row.Cells["Password"].Value.ToString();
+                    //string column6Value = row.Cells["Password"].Value.ToString();
 
+                    passwordFirstName = column3Value.Substring(0,2);
+                    passwordLastName = column4Value.Substring(0,2);
+                    password = passwordFirstName + passwordLastName;
 
                     string query = "INSERT INTO student (IdentificationNumber, Class, FirstName, LastName, Address, Password) VALUES (@IdentificationNumber, @Class, @FirstName,@LastName, @Address, @Password)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+
+
                         command.Parameters.AddWithValue("@IdentificationNumber", column1Value);
                         command.Parameters.AddWithValue("@Class", column2Value);
                         command.Parameters.AddWithValue("@FirstName", column3Value);
                         command.Parameters.AddWithValue("@LastName", column4Value);
                         command.Parameters.AddWithValue("@Address", column5Value);
-                        command.Parameters.AddWithValue("@Password", PasswordEncryptor.MD5Hash(column6Value));
+                        command.Parameters.AddWithValue("@Password", PasswordEncryptor.MD5Hash(password));
 
                         command.ExecuteNonQuery();
                     }
                 }
                 MessageBox.Show("Veriler başarıyla kaydedildi.","Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.dataGridView_ImportData.DataSource = null;
+                textBox_FilePath.Text = "";
 
             }
 
