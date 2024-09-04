@@ -37,9 +37,8 @@ namespace SchoolAutomation
         private void StudentScreen_FormClosed(object sender, FormClosedEventArgs e)
         {
 
-
-            Application.Exit();
-            new AutomationLoginForm().ShowDialog();
+            Application.Restart();
+            Environment.Exit(0);
         }
 
         protected void StudentScreen_Load(object sender, EventArgs e)

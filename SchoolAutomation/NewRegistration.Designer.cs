@@ -177,11 +177,11 @@
             // 
             // button_OpenImportFileScreen
             // 
-            this.button_OpenImportFileScreen.Location = new System.Drawing.Point(245, 266);
+            this.button_OpenImportFileScreen.Location = new System.Drawing.Point(245, 261);
             this.button_OpenImportFileScreen.Name = "button_OpenImportFileScreen";
-            this.button_OpenImportFileScreen.Size = new System.Drawing.Size(75, 23);
+            this.button_OpenImportFileScreen.Size = new System.Drawing.Size(98, 28);
             this.button_OpenImportFileScreen.TabIndex = 7;
-            this.button_OpenImportFileScreen.Text = "button1";
+            this.button_OpenImportFileScreen.Text = "Toplu Kayıt";
             this.button_OpenImportFileScreen.UseVisualStyleBackColor = true;
             this.button_OpenImportFileScreen.Click += new System.EventHandler(this.button_OpenImportFileScreen_Click);
             // 

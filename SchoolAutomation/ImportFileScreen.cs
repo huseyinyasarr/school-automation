@@ -84,7 +84,7 @@ namespace SchoolAutomation
                         command.ExecuteNonQuery();
                     }
                 }
-                MessageBox.Show("Veriler başarıyla kaydedildi.");
+                MessageBox.Show("Veriler başarıyla kaydedildi.","Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
@@ -95,6 +95,13 @@ namespace SchoolAutomation
 
 
 
+        }
+
+        
+
+        private void button_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -136,6 +136,9 @@ namespace SchoolAutomation
             if (string.IsNullOrEmpty(textBox_Teacher_Password.Text) || string.IsNullOrEmpty(textBox_Teacher_NewPassword.Text) || string.IsNullOrEmpty(textBox_Teacher_ConfirmNewPassword.Text) || textBox_Teacher_NewPassword.Text != textBox_Teacher_ConfirmNewPassword.Text || PasswordEncryptor.MD5Hash(textBox_Teacher_Password.Text) != pass)
             {
                 MessageBox.Show("Hatalı Şifre!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox_Teacher_Password.Clear();
+                textBox_Teacher_NewPassword.Clear();
+                textBox_Teacher_ConfirmNewPassword.Clear();
             }
 
             else
@@ -176,6 +179,13 @@ namespace SchoolAutomation
         private void textBox_Teacher_Address_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void AdminScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            Application.Restart();
+            Environment.Exit(0);
         }
     }
 }
